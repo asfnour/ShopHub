@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { Laptop, Shirt, Sofa } from "lucide-react";
-function HomePage({ products }) {
+function HomePage({ products, toggleFavorite}) {
   return (
     <main className="flex-grow">
       <div>
@@ -52,6 +52,7 @@ function HomePage({ products }) {
                 <ProductCard
                   key={product.id} 
                   product={product}
+                  toggleFavorite={toggleFavorite}
                 />
               ))}
             </div>

@@ -7,7 +7,8 @@ const initialProducts = [
     description: 'High-performance laptop for professionals',
     price: 999.99,
     category: 'Electronics',
-    image_url: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853'
+    image_url: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853',
+    isFavorite: false
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ const initialProducts = [
     description: 'Premium noise-canceling headphones',
     price: 199.99,
     category: 'Electronics',
-    image_url: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e'
+    image_url: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e',
+    isFavorite: false
   },
   {
     id: 3,
@@ -23,7 +25,8 @@ const initialProducts = [
     description: 'Comfortable athletic shoes for runners',
     price: 89.99,
     category: 'Sports',
-    image_url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff'
+    image_url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff',
+    isFavorite: false
   },
   {
     id: 4,
@@ -31,7 +34,8 @@ const initialProducts = [
     description: 'Automatic drip coffee maker',
     price: 49.99,
     category: 'Home',
-    image_url: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085'
+    image_url: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085',
+    isFavorite: false
   },
   {
     id: 5,
@@ -39,7 +43,8 @@ const initialProducts = [
     description: 'Durable everyday backpack',
     price: 59.99,
     category: 'Accessories',
-    image_url: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62'
+    image_url: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62',
+    isFavorite: false
   }
 ];
 

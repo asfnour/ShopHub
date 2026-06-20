@@ -8,8 +8,11 @@ import ContactPage from './pages/ContactPage';
 import FavoritesPage from './pages/FavoritePage';
 import CartPage from './pages/CartPage';
 import ProductCard from './components/ProductCard';
+import SignInPage from './pages/SignInPage';
+import SignUpPage from './pages/SignUpPage';
 import { initialProducts, categories } from "./lib/data";
 import { useState, useEffect } from 'react';
+import Footer from './components/Footer';
 
 function App() {
   const [search, setSearch] = useState(''); 
@@ -62,7 +65,10 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/favorites" element={<FavoritesPage products={products} toggleFavorite={toggleFavorite} />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/sign-in" element={<SignInPage />} />
+        <Route path="/sign-up" element={<SignUpPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

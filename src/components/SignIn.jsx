@@ -15,7 +15,6 @@ function SignIn() {
             name="password"
             required
           />
-
           <button
             type="submit"
             className="w-full py-2 font-semibold bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
@@ -25,7 +24,7 @@ function SignIn() {
         </form>
         <p className="text-sm text-center text-gray-600">
           Dont have an account?
-          <Link to="/signup" className="text-blue-500 hover:underline">Sign Up</Link>
+          <Link to="/sign-up" className="text-blue-500 hover:underline">Sign Up</Link>
         </p>
       </form>
     </div>

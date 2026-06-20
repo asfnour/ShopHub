@@ -27,7 +27,7 @@ function NavBar() {
                     </Link>
                 </button>
                 <button className="text-sm text-black hover:text-gray-600 ">
-                    <Link to="/">Sign In</Link>
+                    <Link to="/sign-in">Sign In</Link>
                 </button>
 
             </div>

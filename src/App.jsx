@@ -11,8 +11,9 @@ import ProductCard from './components/ProductCard';
 import SignInPage from './pages/SignInPage';
 import SignUpPage from './pages/SignUpPage';
 import { initialProducts, categories } from "./lib/data";
-import { useState, useEffect } from 'react';
 import Footer from './components/Footer';
+import CheckoutPage from './pages/CheckoutPage';
+import { useState, useEffect } from 'react';
 
 function App() {
   const [search, setSearch] = useState(''); 

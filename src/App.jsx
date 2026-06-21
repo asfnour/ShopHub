@@ -12,6 +12,7 @@ import SignInPage from './pages/SignInPage';
 import SignUpPage from './pages/SignUpPage';
 import { initialProducts, categories } from "./lib/data";
 import Footer from './components/Footer';
+import CheckoutPage from './pages/CheckoutPage';
 function App() {
   return (
     
@@ -25,6 +26,7 @@ function App() {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/sign-in" element={<SignInPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
       </Routes>
       <Footer />
     </div>

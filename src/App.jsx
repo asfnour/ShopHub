@@ -14,6 +14,7 @@ import { initialProducts, categories } from "./lib/data";
 import Footer from './components/Footer';
 import CheckoutPage from './pages/CheckoutPage';
 import { useState, useEffect } from 'react';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   const [search, setSearch] = useState(''); 
@@ -41,22 +42,24 @@ function App() {
       )
     );
   };
-  const filteredProducts = products
-    .filter((product) => {
-      if (activeCategory === "all") return true;
-      return product.category === activeCategory;
-    })
-    .filter((product) =>
-      product.name.toLowerCase().includes(search.toLowerCase())
-    )
-    .filter((product) => {
-      if (!minPrice) return true;
-      return product.price >= Number(minPrice);
-    })
-    .filter((product) => {
-      if (!maxPrice) return true;
-      return product.price <= Number(maxPrice);
-    });
+
+  const filteredProducts = products.filter((product) =>{
+    const matchCategory =
+      activeCategory === "all" || product.category === activeCategory;
+
+    const matchSearch =
+      product.name.toLowerCase().includes(search.toLowerCase());
+
+    // !"" = true if minprice = ""
+    const matchMin =
+      !minPrice || product.price >= Number(minPrice);
+
+    const matchMax =
+      !maxPrice || product.price <= Number(maxPrice);
+
+    return matchCategory && matchSearch && matchMin && matchMax;
+  });
+
   return (
     <div className="">
       <NavBar search={search} setSearch={setSearch} />
@@ -64,7 +67,7 @@ function App() {
         <Route path="/" element={<HomePage products={products} toggleFavorite={toggleFavorite} />} />
         <Route path="/categories" element={<CategoryPage products={filteredProducts} toggleFavorite={toggleFavorite} search={search} setSearch={setSearch} minPrice={minPrice} setMinPrice={setMinPrice} maxPrice={maxPrice} setMaxPrice={setMaxPrice} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/favorites" element={<FavoritesPage products={products} toggleFavorite={toggleFavorite} />} />
+        <Route path="/favorites" element={<ProtectedRoute> <FavoritesPage products={products} toggleFavorite={toggleFavorite} /> </ProtectedRoute>} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/sign-in" element={<SignInPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />

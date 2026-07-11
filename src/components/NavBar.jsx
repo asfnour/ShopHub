@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
+import { useAuth} from "../context/AuthContext";
+
 function NavBar({ search, setSearch }) {
+     const { isAuth, signout } = useAuth();
     return (
         <nav className="bg-white shadow-md px-6 md:px-20 py-4 flex justify-between items-center">
             <div className="flex items-center space-x-8">
@@ -40,10 +43,15 @@ function NavBar({ search, setSearch }) {
                         <span className="absolute ml-5 top-3 right-15 bg-red-500 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">3</span>
                     </Link>
                 </button>
+                {isAuth ? (
+                <button onClick={signout} className="text-sm text-black hover:text-gray-600 ">
+                    logout
+                </button>
+                ) : (
                 <button className="text-sm text-black hover:text-gray-600 ">
                     <Link to="/sign-in">Sign In</Link>
                 </button>
-
+                )}
             </div>
         </nav>
     );

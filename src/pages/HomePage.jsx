@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { Laptop, Shirt, Sofa } from "lucide-react";
-function HomePage({ products, toggleFavorite}) {
+function HomePage({ products, toggleFavorite }) {
   return (
     <main className="flex-grow">
       <div>
@@ -22,35 +22,35 @@ function HomePage({ products, toggleFavorite}) {
         <Link to="/categories" data-discover="true">
           <div className="max-w-7xl mx-auto px-4 lg:px-8 py-16">
             <h2 className="text-3xl font-bold mb-12 text-center">Featured Categories</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Link className="relative h-64 overflow-hidden rounded-lg cursor-pointer  group">
-                <Laptop size={40} alt=" Electronics" className="w-full h-full  object-cover transform group-hover:scale-115 transition duration-300 brightness-65"/>
-                <div className="absolute inset-0 bg-opacity-40 flex items-center justify-center transition duration-300 opacity-0 group-hover:opacity-100">
-                  <h3 className="text-white text-2xl font-bold bg-black"> Electronics</h3>
-                </div>
-              </Link>
-              <Link className="relative h-64 overflow-hidden rounded-lg cursor-pointer  group">
-                <Shirt size={40} alt=" Fashion" className="w-full h-full  object-cover transform  group-hover:scale-115 transition duration-300 brightness-65" />
-                <div className="absolute inset-0 bg-opacity-40 flex items-center justify-center transition duration-300 opacity-0 group-hover:opacity-100">
-                  <h3 className="text-white text-2xl font-bold bg-black"> Fashion</h3>
-                </div>
-              </Link>
-              <Link className="relative h-64 overflow-hidden rounded-lg cursor-pointer  group">
-                <Sofa size={40} alt=" Home &amp; Living" className="w-full h-full  object-cover transform group-hover:scale-115 transition duration-300 brightness-65" />
-                <div className="absolute inset-0 bg-opacity-40 flex items-center justify-center transition duration-300 opacity-0 group-hover:opacity-100">
-                  <h3 className="text-white text-2xl font-bold bg-black"> Home &amp; Living</h3>
-                </div>
-              </Link>
-            </div>
           </div>
         </Link>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Link className="relative h-64 overflow-hidden rounded-lg cursor-pointer  group">
+            <Laptop size={40} alt=" Electronics" className="w-full h-full  object-cover transform group-hover:scale-115 transition duration-300 brightness-65" />
+            <div className="absolute inset-0 bg-opacity-40 flex items-center justify-center transition duration-300 opacity-0 group-hover:opacity-100">
+              <h3 className="text-white text-2xl font-bold bg-black"> Electronics</h3>
+            </div>
+          </Link>
+          <Link className="relative h-64 overflow-hidden rounded-lg cursor-pointer  group">
+            <Shirt size={40} alt=" Fashion" className="w-full h-full  object-cover transform  group-hover:scale-115 transition duration-300 brightness-65" />
+            <div className="absolute inset-0 bg-opacity-40 flex items-center justify-center transition duration-300 opacity-0 group-hover:opacity-100">
+              <h3 className="text-white text-2xl font-bold bg-black"> Fashion</h3>
+            </div>
+          </Link>
+          <Link className="relative h-64 overflow-hidden rounded-lg cursor-pointer  group">
+            <Sofa size={40} alt=" Home &amp; Living" className="w-full h-full  object-cover transform group-hover:scale-115 transition duration-300 brightness-65" />
+            <div className="absolute inset-0 bg-opacity-40 flex items-center justify-center transition duration-300 opacity-0 group-hover:opacity-100">
+              <h3 className="text-white text-2xl font-bold bg-black"> Home &amp; Living</h3>
+            </div>
+          </Link>
+        </div>
         <section className="bg-gray-50 py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <h2 className="text-3xl font-bold text-center mb-12">Featured Products</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-20 bg-white">
               {products.map((product) => (
                 <ProductCard
-                  key={product.id} 
+                  key={product.id}
                   product={product}
                   toggleFavorite={toggleFavorite}
                 />
@@ -58,7 +58,7 @@ function HomePage({ products, toggleFavorite}) {
             </div>
             <div className="text-center mt-10">
               <Link className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" to="/categories" data-discover="true">
-              View All Products
+                View All Products
               </Link>
             </div>
           </div>
